@@ -1,4 +1,10 @@
+# 3D Portfolio Website
 
+<a href="https://github.com/RepoRogue123/My_portfolio">
+  <img src="https://img.shields.io/github/stars/RepoRogue123/My_portfolio?style=social" />
+</a>
+
+<a href="https://atharva-portfolio.vercel.app/"><strong>🚀 View Demo</strong></a>
 
 <div align="center">
     <a href="https://github.com/jeffjiang13/3d-portfolio">
@@ -10,10 +16,6 @@
 
 <p align="center">
     <b>Explore the interactive 3D space that showcases my projects and skills. Built with the power of Three.js and React.js.</b>
-</p>
-
-<p align="center">
-    <a href="https://jeffjiang.vercel.app/"><strong>🚀 View Demo</strong></a>
 </p>
 
 ## About The Project
@@ -48,7 +50,7 @@ npm install npm@latest -g
 
 1. Clone the repo
 ```sh
-git clone https://github.com/jeffjiang13/3d-portfolio.git
+git clone https://github.com/RepoRogue123/My_portfolio.git
 ```
 2. Install NPM packages
 ```sh

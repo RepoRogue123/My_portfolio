@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
-import resume from "/src/atharva_honparkhe.pdf";
+import resume from "../assets/atharva_cv.pdf";
 import { LOGO2 } from "../assets";
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -54,9 +54,9 @@ const Navbar = () => {
         <a href={resume} download="atharva_honparkhe.pdf">
             <button
               className={`${
-                active === Link.title ? "abhishek" : "abhishek-btn"
-              }   font-medium cursor-pointer border-[1px]`}
-              onClick={() => setActive(Link.title)}
+                active === "resume" ? "text-white" : "text-secondary"
+              } font-medium cursor-pointer border-[1px]`}
+              onClick={() => setActive("resume")}
             >
               <span className="flex items-center animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent font-black">
                 {" "}
@@ -102,9 +102,9 @@ const Navbar = () => {
             <a href={resume} download="atharva_honparkhe.pdf">
             <button
               className={`${
-                active === Link.title ? "abhishek" : "abhishek-btn"
-              }   font-medium cursor-pointer border-[1px]`}
-              onClick={() => setActive(Link.title)}
+                active === "resume" ? "text-white" : "text-secondary"
+              } font-medium cursor-pointer border-[1px]`}
+              onClick={() => setActive("resume")}
             >
               <span className="flex items-center animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent font-black">
                 {" "}
