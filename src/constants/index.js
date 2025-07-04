@@ -64,7 +64,8 @@ import {
   QMazeMaster,
   Track_tracer,
   Smart_helmet,
-  Hospital_management
+  Hospital_management,
+  chatterflow
 } from "../assets";
 export const navLinks = [
   {
@@ -369,6 +370,13 @@ const imageProjects = [
     title: "Beeclone",
     description: "",
   },
+  {
+    id: 15,
+    image: chatterflow,
+    url: "https://chatter-flow-mu.vercel.app/login",
+    title: "Chatterflow",
+    description: "ChatterFlow is a real-time, one-on-one chat app built with the MERN stack and Socket.io. Features secure auth, instant messaging, and image sharing via Cloudinary. Frontend: React (Vite, TailwindCSS). Backend: Node.js, Express, MongoDB (MVC).",
+  },
 ];
 
 const projects = [
@@ -492,6 +500,25 @@ const projects = [
     ],
     image: Hospital_management,
     source_code_link: "https://github.com/RepoRogue123/Hospital-management-system"
+  },
+  {
+    name: "ChatterFlow — Real-Time Chat Application",
+    description:
+      "ChatterFlow is a real-time, one-on-one chat app built with the MERN stack and Socket.io. Features secure auth, instant messaging, and image sharing via Cloudinary. Frontend: React (Vite, TailwindCSS). Backend: Node.js, Express, MongoDB (MVC). Backend: https://chatterflow-backend.onrender.com",
+    tags: [
+      { name: "MERN", color: "blue-text-gradient" },
+      { name: "Socket.io", color: "green-text-gradient" },
+      { name: "Cloudinary", color: "pink-text-gradient" },
+      { name: "React", color: "blue-text-gradient" },
+      { name: "Vite", color: "green-text-gradient" },
+      { name: "TailwindCSS", color: "pink-text-gradient" },
+      { name: "Node.js", color: "blue-text-gradient" },
+      { name: "Express.js", color: "green-text-gradient" },
+      { name: "MongoDB", color: "pink-text-gradient" },
+      { name: "MVC", color: "blue-text-gradient" },
+    ],
+    image: chatterflow,
+    liveUrl: "https://chatter-flow-mu.vercel.app"
   },
 ];
 

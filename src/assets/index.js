@@ -13,6 +13,7 @@ import Linguistix from "./Linguistix.png";
 import QMazeMaster from "./QMazeMaster.png";
 import Track_tracer from "./Track_tracer.png";
 import Hospital_management from "./Hospital_management.png";
+import chatterflow from "./chatterflow.png";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
@@ -148,4 +149,5 @@ export {
   Track_tracer,
   Smart_helmet,
   Hospital_management,
+  chatterflow,
 };
