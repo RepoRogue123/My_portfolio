@@ -34,6 +34,7 @@ const Hero = () => {
 
   return (
     <section className="relative w-full h-screen mx-auto">
+      <div className="absolute inset-0 pointer-events-none z-10" style={{background: "radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, rgba(20,24,56,0.7) 100%)"}} />
       <div
         className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
       >

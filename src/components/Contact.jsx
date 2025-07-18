@@ -10,17 +10,18 @@ import { slideIn } from "../utils/motion";
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
-    name: "",
-    email: "",
+    from_name: "",
+    reply_to: "",
+    phone: "",
+    subject: "",
+    date: "",
     message: "",
   });
 
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
-
+    const { name, value } = e.target;
     setForm({
       ...form,
       [name]: value,
@@ -36,10 +37,11 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
-          name: form.name,
-          to_name: "Atharva Honparkhe",
-          email: form.email,
-          to_email: "b23ee1006@iitj.ac.in",
+          from_name: form.from_name,
+          reply_to: form.reply_to,
+          phone: form.phone,
+          subject: form.subject,
+          date: form.date,
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
@@ -48,24 +50,17 @@ const Contact = () => {
         () => {
           setLoading(false);
           alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
+          setForm({ from_name: "", reply_to: "", phone: "", subject: "", date: "", message: "" });
         },
         (error) => {
           setLoading(false);
           console.error(error);
-
           alert("Ahh, something went wrong. Please try again.");
         }
       );
   };
 
   return (
-
     <div
       className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
     >
@@ -85,23 +80,58 @@ const Contact = () => {
             <span className='text-white font-medium mb-4'>Your Name</span>
             <input
               type='text'
-              name='name'
-              value={form.name}
+              name='from_name'
+              value={form.from_name}
               onChange={handleChange}
               placeholder="What's your name?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your email</span>
+            <span className='text-white font-medium mb-4'>Your Email</span>
             <input
               type='email'
-              name='email'
-              value={form.email}
+              name='reply_to'
+              value={form.reply_to}
               onChange={handleChange}
               placeholder="What's your email address?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
+          </label>
+          <label className='flex flex-col'>
+            <span className='text-white font-medium mb-4'>Phone</span>
+            <input
+              type='tel'
+              name='phone'
+              value={form.phone}
+              onChange={handleChange}
+              placeholder="Your phone number (optional)"
+              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+            />
+          </label>
+          <label className='flex flex-col'>
+            <span className='text-white font-medium mb-4'>Subject</span>
+            <input
+              type='text'
+              name='subject'
+              value={form.subject}
+              onChange={handleChange}
+              placeholder="Subject of your message"
+              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+            />
+          </label>
+          <label className='flex flex-col'>
+            <span className='text-white font-medium mb-4'>Date</span>
+            <input
+              type='text'
+              name='date'
+              value={form.date}
+              onChange={handleChange}
+              placeholder='dd/mm/yyyy'
+              pattern='^\d{2}/\d{2}/\d{4}$'
+              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+            />
+            <span className='text-xs text-secondary mt-1'>Format: dd/mm/yyyy</span>
           </label>
           <label className='flex flex-col'>
             <span className='text-white font-medium mb-4'>Your Message</span>
@@ -126,7 +156,7 @@ const Contact = () => {
 
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
+        className='xl:flex-1 xl:h-[600px] md:h-[400px] h-[300px] min-w-[300px]'
       >
         <EarthCanvas />
       </motion.div>
